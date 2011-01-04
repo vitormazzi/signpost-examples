@@ -13,8 +13,8 @@ public class MyfcIDMain {
 
     public static final String CONSUMER_KEY = "uam9fsma9a87w7jm3v2r9n47";
     public static final String CONSUMER_SECRET = "Uze4zNHbJM";
-    public static final String CALLBACK = "http://localhost/sso/callback";
 
+    public static final String CALLBACK_URL = "http://localhost/sso/callback";
     public static final String MYFCID_REQUEST_TOKEN_URL = "http://sandbox.id.myfreecomm.com.br/sso/initiate";
     public static final String MYFCID_ACCESS_TOKEN_URL = "http://sandbox.id.myfreecomm.com.br/sso/token";
     public static final String MYFCID_AUTHORIZE_URL = "http://sandbox.id.myfreecomm.com.br/sso/authorize";
@@ -29,7 +29,7 @@ public class MyfcIDMain {
 
         System.out.println("Fetching request token from MyfcID...");
 
-        String authUrl = provider.retrieveRequestToken(consumer, CALLBACK_URL)
+        String authUrl = provider.retrieveRequestToken(consumer, CALLBACK_URL);
         authUrl = OAuth.addQueryParameters(authUrl, OAuth.OAUTH_CONSUMER_KEY, CONSUMER_KEY);
 
         System.out.println("Request token: " + consumer.getToken());
